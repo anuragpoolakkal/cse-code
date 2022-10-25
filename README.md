@@ -1,2 +1,2 @@
-# lab-code
+# Lab Code
 Lab Code Archives
