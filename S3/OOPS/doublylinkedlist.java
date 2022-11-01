@@ -1,33 +1,32 @@
-public class Node{
+import java.util.*;
+
+public class node {
 	int data;
-	Node next;
-	Node prev;
+	node next;
+	node prev;
 }
 
-
-
-import java.util.*;
-class DoublyLinkedList{
-	public static void main(String[] args){
-		int arr[], int index =0,i,n;
+class doublylinkedlist {
+	public static void main(String[] args) {
+		int arr[], index =0, i, n;
 		arr = new int[10];
-		Scannner sc = new scanner(System.in)
+		Scannner sc = new scanner(System.in);
 		node current_node = null;
 		node prev_node = null;
 		node nxt_node = null;
 		node start_node = null;
 		node end_node = null;
-		System.out.println("creating linked list \n");
+		System.out.println("Creating linked list \n");
 		System.out.println("Enter number of nodes \n");
 		n = nextInt();
-		for(i =0; i<n; i++){
-			System.out.println("Enter data")
+		for(i =0; i<n; i++) {
+			System.out.println("Enter data");
 			arr[i] = sc.next();
 		}
 		while(index < n){
-			if(index> 0){
+			if(index> 0) {
 				prev_node.next = current_node;
-			}else{
+			} else {
 				start_node = current_node;
 			}
 			current_node.data = arr[index];
@@ -36,26 +35,25 @@ class DoublyLinkedList{
 			index++;
 			prev_node = current_node;
 		}
-		System.out.println("deleting node");
+		
+		System.out.println("Deleting node");
 		System.out.print("Enter key");
 		int key = sc.nextInt();
 		current_node = start_node;
-		if(start_node.data == key){
-			start_node = start_node.next
-		}
-		else {
+		if(start_node.data == key) {
+			start_node = start_node.next;
+		} else {
 
-			while (current_node != null){
+			if (current_node != null) {
 				prev_node = current_node.prev;
 				nxt_node = current_node.next;
 				prev_node = next_node;
-				next_node.prev = previous_node
-				System.out.println("node deleted");
+				next_node.prev = previous_node;
+				System.out.println("Node deleted");
 				break;
 			}
-		}
 		
-		else {
+		else { 
 	current_node = current_node.next;
 	}
 
