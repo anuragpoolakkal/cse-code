@@ -1,3 +1,5 @@
+// Experiment 1 - Stack Implementation Using Array
+
 #include <stdio.h>
 int stack[5], top=-1,data;
 
