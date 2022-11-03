@@ -1,3 +1,5 @@
+// Experiment 3 - Priority Queue
+
 #include <stdio.h>
 #define MAXSIZE 5
 int prior[MAXSIZE];
