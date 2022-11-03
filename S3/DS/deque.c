@@ -14,7 +14,7 @@ void display();
 void main() {
 	int a = 0;
 	while (a != 6) {
-		printf("\n 1. Insert ar rear \n 2. Insert at front \n 3. Delete at front \n 4. Delete at rear \n 5. Display \n 6. Exit \n";
+		printf("\n 1. Insert ar rear \n 2. Insert at front \n 3. Delete at front \n 4. Delete at rear \n 5. Display \n 6. Exit \n");
 		scanf("%d", &a);
 		switch (a) {
 			case 1: insertrear(); display(); break;
@@ -60,9 +60,9 @@ void deleterear() {
 		exit(-1);
 	} else {
 		printf("\n Your element is %d", deque[rear]);
-		if (rear == fornt) {
+		if (rear == front) {
 			front = -1; rear = -1;
-			prinf(" \n Queue is empty!");
+			printf(" \n Queue is empty!");
 			exit(-1);
 		} else {
 			rear--;
@@ -75,7 +75,7 @@ void deletefront() {
 		printf("\n Queue underflow!");
 		exit(-1);
 	} else {
-		printf("\n Your element is %d", &deque[front]):
+		printf("\n Your element is %d", &deque[front]);
 		front++;
 		if (front > rear) {
 			front = -1; rear = -1;
@@ -88,7 +88,7 @@ void deletefront() {
 
 void display() {
 	printf(" \n Your queue is : ");
-	for (int i = front; i <= rear; 1++) {
+	for (int i = front; i <= rear; i++) {
 		printf("%d", deque[i]);
 	}
 	printf("\n");
