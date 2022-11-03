@@ -14,7 +14,7 @@ void display();
 void main() {
 	int a = 0;
 	while (a != 6) {
-		printf("\n 1. Insert ar rear \n 2. Insert at front \n 3. Delete at front \n 4. Delete at rear \n 5. Display \n 6. Exit \n");
+		printf("\n 1. Insert ar rear \n 2. Insert at front \n 3. Delete at front \n 4. Delete at rear \n 5. Display \n 6. Exit \n Enter your choice: ");
 		scanf("%d", &a);
 		switch (a) {
 			case 1: insertrear(); display(); break;
