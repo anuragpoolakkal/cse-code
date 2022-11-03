@@ -75,7 +75,7 @@ void deletefront() {
 		printf("\n Queue underflow!");
 		exit(-1);
 	} else {
-		printf("\n Your element is %d", &deque[front]);
+		printf("\n Your element is %d", deque[front]);
 		front++;
 		if (front > rear) {
 			front = -1; rear = -1;
