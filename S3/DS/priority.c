@@ -1,110 +1,97 @@
 // Experiment 3 - Priority Queue
+// Experiment 3 - Priority Queue Using Array
 
 #include <stdio.h>
-#define MAXSIZE 5
-int prior[MAXSIZE];
-int front=-1, rear=-1;
-int enqueue(int a);
-int dequeue(int b);
-int display();
-int isFull();
-int isEmpty();
+#include <stdlib.h>
+#define n 10
+int queue[n], front = -1, rear = -1, temp, x = 0, i, j, data;
 
-void main() {
-	int a, m, b;
-	
-	do {
-		printf (" \n Choose the option:");
-		printf ("\n 1. Insert  2. Delete  3. Display  4. Exit: ");
-		scanf ("%d",&m);
-		switch (m) {
-			case 1: printf("\n Enter the element to be inserted: ");
-				scanf("%d",&a);
-				enqueue(a);
+void insert();
+void delete();
+void display();
+
+int main() {
+	int ch;
+	while (ch != 4){		
+		printf (" MENU \n 1. Insert  2. Delete  3. Display  4. Exit: ");
+		scanf ("%d",&ch);
+		switch (ch) {
+			case 1: insert(); display();
 				break;
-			case 2: printf("\n Enter the element to be deleted: ");
-				scanf("%d",&b);
-				dequeue(b);
+			case 2: delete(); display();
 				break;
 			case 3: display(); break;
 			case 4: break;
 			default: printf ("Invalid input \n"); break;
 			}
-	} while (m != 4);
-}
-
-int enqueue (int a) {
-	int i,j;
-	if (front = -1) {
-		front =0;
-		rear = 0;
-		prior[rear] = a;
-	} else {
-		if (isFull()) {
-			printf ("\n Queue is full. Cannot insert. \n");
-		} else {
-			rear = rear + 1;
-			for (i=front; i <= rear; i++) {
-				if (a<prior[i]) {
-					for (j=rear-1; j>=1; j++) {
-						prior[j+1] = prior[j];
-						prior[j] = a;
-						break;
-					}
-				}
-				else if (i = rear) {
-					prior[i] = a;
-					break;
-				}	
-			}
 		}
-	}					 
-			
 }
 
-int dequeue (int b) {
-	int i, j, flag = 0;
-	if (isEmpty()) {
-		printf ("\n Queue is empty \n");
+void insert() {
+	if (front == -1 && rear == -1) {
+		front = 0;
+	}
+		
+	if (rear== (n-1)) {
+		printf("Queue overflow");
+		return;
 	} else {
-		for (i=0; i <= rear; i++); {
-			if (prior[i] = b) {
-				printf ("\n Element has been removed \n ");
-				for (j=1; j<rear; j++) {
-					prior[j+1];
-					rear--;
-					flag = 1;
-					break;
+		rear++;
+		printf("Enter data: ");
+		scanf("%d", &data);
+		queue[rear] = data;
+		for (i = 0; i <= rear; i++) {
+			for (j = 0; j <= rear-1-i; j++) {
+				if ((queue[j]) > (queue[j+1])) {
+				temp = queue[j];
+				queue[j] = queue[j+1];
+				queue[j+1] = temp;
 				}
 			}
-			if (flag = 0)
-				printf (" \n Element not found \n");
 		}
-	}			
+	}
 }
 
-int display() {
-	 int i;
-	 if (isEmpty()) {
-	 	printf ("\n Queue is empty \n");
-	 } else {
-	 	printf ("\n Queue elements are: ");
-	 	for (i=front; i<=rear; i++)
-	 		printf	("%d", prior[i]);
-	 }
+
+void delete() {
+	int item;
+	if (rear == 0) {
+		printf("Element deleted is %d", queue[rear]);
+		printf("Queue empty");
+		rear--;
+		return;
+	}
+	
+	if (rear < 0) {
+		printf("Queue underflow");
+		return;
+	} else {
+		printf("Enter element to be deleted: ");
+		scanf("%d", &item);
+		
+		for (i = 0; i <= rear; i++) {
+			if (queue[i] = item) {
+				x++;
+				for (j = 0; j <= rear; j++) {
+					queue[j] =  queue [j+1];
+				}
+				
+				rear--;
+				
+				printf("Element deleted successfully \n");
+				}
+			if (x == 0) {
+				printf("Element not found");
+			}
+		}
+	}
 }
 
-int isFull() {
-	if (rear >= MAXSIZE - 1)
-		return 1;
-	else
-		return 0;
 
-}
-
-int isEmpty() {
-	if (rear < 0)
-		return 1;
-	else
-		return 0;
+void display() {
+	 printf("Your queue is: ");
+	 for (i = 0; i <= rear; i++) {
+	 	printf("%d ", queue[i]);
+	 	}
+	 printf("\n");
 }
