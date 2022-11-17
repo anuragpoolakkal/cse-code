@@ -6,8 +6,8 @@
 
 int queue[n], front = -1, rear = -1, data;
 
-void enqueue();
-void dequeue();
+int enqueue();
+int dequeue();
 void display();
 
 void main() {
@@ -25,33 +25,37 @@ void main() {
 	}
 }
 
-void enqueue() {
+int enqueue() {
 	if (front == -1 && rear == -1) {
 		front = 0;
 	}	
 	if (((front == 0) && (rear == (n - 1))) || ((front != 0) && (front == rear+1))) {
 		printf("\n Queue overflow!");
-		return;
+		return 0;
 	} else if (rear == (n-1) && front != 0) {
 		rear = 0;
 		printf("Enter data: ");
 		scanf("%d", &data);
 		queue[rear] = data;
+		return 0;
 	} else {
 		rear = rear++;
 		printf("Enter data: ");
 		scanf("%d", &data);
+		queue[rear] = data;
+		return 0;
 	}
 }
 
-void dequeue() {
+int dequeue() {
 	if (front == -1 && rear == -1) {
 		printf(" \n Queue is underflow!");
-		return;
+		return 0;
 	} else if (front == rear) {
 		printf("\n Your element is %d", queue[rear]);
 		front = -1;
 		rear = -1;
+		return 0;
 	} else {
 		if (front = n - 1)
 			front = 0;
@@ -71,11 +75,8 @@ void display() {
 		printf("\n");
 	} else {
 		printf("\n Your queue is: ");
-		for (i = front; i <= n-1; i++)
-			printf ("%d", queue[i]);
-		}
-		
-		for (i = 0; i <= rear; i++)
-			printf ("%d", queue[i]);
+		for (i = front; i <= rear; i++)
+			printf("%d", queue[i]);
 		printf ("\n");
+	}
 }
