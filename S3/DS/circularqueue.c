@@ -1,82 +1,95 @@
 // Experiment 5 - Circular Queue Using Array
 
-#include<stdlib.h>
-#include<stdio.h>
-#define n 10
+#include <stdio.h>
+#include <stdlib.h>
+#define n 5
 
 int queue[n], front = -1, rear = -1, data;
 
-int enqueue();
-int dequeue();
+void enqueue();
+void dequeue();
 void display();
 
-void main() {
-	int a;
-	while (a != 4) {
-		printf("\n 1. Enqueue \n 2. Dequeue \n 3. Display \n 4. Exit \n Enter your choice: ");
+void main(){
+	int a = 0;
+	while(a != 4){
+		printf("1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n");
+		printf("Enter your choice: ");
+		
 		scanf("%d", &a);
-		switch (a) {
-		case 1: enqueue(); display(); break;
-		case 2: dequeue(); display(); break;
-		case 3: display(); break;
-		case 4: return;
-		default: printf("\n Enter valid choice!"); break;
+		switch(a){
+			case 1:
+				enqueue();
+				break;
+			case 2:
+				dequeue();
+				break;
+			case 3:
+				display();
+				break;
+			case 4:
+				exit(-1);
+			default:
+				printf("Enter a valid choice");
 		}
 	}
 }
 
-int enqueue() {
-	if (front == -1 && rear == -1) {
+void enqueue(){
+	if(front == -1 && rear == -1){
 		front = 0;
-	}	
-	if (((front == 0) && (rear == (n - 1))) || ((front != 0) && (front == rear+1))) {
-		printf("\n Queue overflow!");
-		return 0;
-	} else if (rear == (n-1) && front != 0) {
-		rear = 0;
+	}
+	
+	if((front == 0) && (rear == (n - 1)) || (front != 0 && front == rear + 1)){
+		printf("Queue overflow");
+	}
+	else{
+		rear = (rear == n - 1 && front != 0) ? 0 : rear + 1;
 		printf("Enter data: ");
 		scanf("%d", &data);
 		queue[rear] = data;
-		return 0;
-	} else {
-		rear = rear++;
-		printf("Enter data: ");
-		scanf("%d", &data);
-		queue[rear] = data;
-		return 0;
+		printf("Data inserted!");
 	}
 }
 
-int dequeue() {
-	if (front == -1 && rear == -1) {
-		printf(" \n Queue is underflow!");
-		return 0;
-	} else if (front == rear) {
-		printf("\n Your element is %d", queue[rear]);
-		front = -1;
-		rear = -1;
-		return 0;
-	} else {
-		if (front = n - 1)
-			front = 0;
-		else {
-			front = front + 1;
-		}
-	}
-}
-
-void display() {
-	int i;
-	if (front == -1 && rear == -1) {
-		printf("\n Queue empty!");
+void dequeue(){
+	if(front == -1 && rear == -1){
+		printf("Queue underflow");
 		return;
-	} else if (front <= rear) {
-		printf("\n %d", queue[i]);
+	}
+	
+	
+	if(front == rear){
+		printf("Removed element is %d\n", queue[rear]);
+		front = rear = -1;	
+	}
+	else{
+		printf("Removed element is %d\n", queue[front]);
+		front = (front == n - 1) ? 0 : front + 1;
+	}
+}
+
+void display(){
+	if(front == -1 && rear == -1){
+		printf("Queue empty\n");
+		return;
+	}
+	
+	int i;
+	printf("Your queue is: \n");
+		
+	if(front <= rear){
+		for(i = front; i <= rear; i++){
+			printf("%d ", queue[i]);
+		}
 		printf("\n");
-	} else {
-		printf("\n Your queue is: ");
-		for (i = front; i <= rear; i++)
-			printf("%d", queue[i]);
-		printf ("\n");
+	}else{
+		for(i = front; i <= n - 1; i++){
+			printf("%d ", queue[i]);
+		}
+		for(i = 0; i <= rear; i++){
+			printf("%d ", queue[i]);
+		}
+		printf("\n");
 	}
 }
