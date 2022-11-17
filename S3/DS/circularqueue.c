@@ -1,8 +1,10 @@
 // Experiment 5 - Circular Queue Using Array
 
+// Experiment 5 - Circular Queue Using Array
+
 #include<stdlib.h>
 #include<stdio.h>
-#define n 5
+#define n 10
 
 int queue[n], front = -1, rear = -1, data;
 
@@ -12,23 +14,26 @@ void display();
 
 void main() {
 	int a;
-	while (a != 6) {
+	while (a != 4) {
 		printf("\n 1. Enqueue \n 2. Dequeue \n 3. Display \n 4. Exit \n Enter your choice: ");
 		scanf("%d", &a);
 		switch (a) {
 		case 1: enqueue(); display(); break;
 		case 2: dequeue(); display(); break;
 		case 3: display(); break;
-		case 4: exit(-1);
+		case 4: return;
 		default: printf("\n Enter valid choice!"); break;
 		}
 	}
 }
 
 void enqueue() {
-	if ((front == -1 && rear == -1) || (front != 0 && front == rear+1)) {
+	if (front == -1 && rear == -1) {
+		front = 0;
+	}	
+	if (((front == 0) && (rear == (n - 1))) || ((front != 0) && (front == rear+1))) {
 		printf("\n Queue overflow!");
-		exit(-1);
+		return;
 	} else if (rear == (n-1) && front != 0) {
 		rear = 0;
 		printf("Enter data: ");
