@@ -1,6 +1,6 @@
 import java.io.*;
 
-publc class filehandling {
+public class filehandling {
     public static void main (String[] args) throws exception {
         File inf = new File("in.txt");
         File outf = new FIle("out.txt");
