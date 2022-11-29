@@ -1,4 +1,4 @@
-## KTU B Tech CSE Lab Code
+## CSE Lab Code
 Lab Code Archives
 
 ##### For Reference
