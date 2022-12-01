@@ -1,3 +1,5 @@
+// Experiment 10 - Linked List
+
 #include <stdio.h>
 #include <stdlib.h>
 struct node {
@@ -144,47 +146,37 @@ int main()
 {
 	int choice;
 	while (1) {
-                printf("*********MENU**********");
-		printf("\n1.Display\n");
-		printf("\n2.Insertion at the Beginning\n");
-		printf("\n3.Insertion at the End\n");
-		printf("\n4.Insertion at any position\n");
-		printf("\n5.Deletion at the Beginning\n");
-		printf("\n6.Deletion at the End\n");
-		printf("\n7.Deletion at any position\n");
-		printf("\n8.To exit\n");
-		printf("\nEnter Choice :\n");
+                printf("-- MENU ---");
+		printf("\n1.Display");
+		printf("\n2.Insertion at the Beginning");
+		printf("\n3.Insertion at the End");
+		printf("\n4.Insertion at any position");
+		printf("\n5.Deletion at the Beginning");
+		printf("\n6.Deletion at the End");
+		printf("\n7.Deletion at any position");
+		printf("\n8.To exit");
+		printf("\nEnter Choice: ");
 		scanf("%d", &choice);
 
 		switch (choice) {
-		case 1:
-			traverse();
+		case 1: traverse();
 			break;
-		case 2:
-			insertAtFront();
+		case 2: insertAtFront();
 			break;
-		case 3:
-			insertAtEnd();
+		case 3: insertAtEnd();
 			break;
-		case 4:
-			insertAtPosition();
+		case 4: insertAtPosition();
 			break;
-		case 5:
-			deleteFirst();
+		case 5: deleteFirst();
 			break;
-		case 6:
-			deleteEnd();
+		case 6: deleteEnd();
 			break;
-		case 7:
-			deletePosition();
+		case 7: deletePosition();
 			break;
-		case 8:
-			exit(1);
+		case 8: exit(1);
 			break;
-		default:
-			printf("Incorrect Choice\n");
+		default: printf("Incorrect Choice\n");
 		}
 	}
 	return 0;
 }
-
