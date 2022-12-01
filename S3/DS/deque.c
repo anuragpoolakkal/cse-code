@@ -20,7 +20,7 @@ void main() {
 			case 1: insertrear(); display(); break;
 			case 2: insertfront(); display(); break;
 			case 3: deletefront(); display(); break;
-			case 4: deleterear(); display; break;
+			case 4: deleterear(); display(); break;
 			case 5: display(); break;
 			case 6: exit(-1);
 			default: printf("\n Enter valid choice!");
