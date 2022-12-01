@@ -146,15 +146,15 @@ int main()
 {
 	int choice;
 	while (1) {
-                printf("-- MENU ---");
-		printf("\n1.Display");
-		printf("\n2.Insertion at the Beginning");
-		printf("\n3.Insertion at the End");
-		printf("\n4.Insertion at any position");
-		printf("\n5.Deletion at the Beginning");
-		printf("\n6.Deletion at the End");
-		printf("\n7.Deletion at any position");
-		printf("\n8.To exit");
+                printf("--- MENU ---");
+		printf("\n1. Display");
+		printf("\n2. Insertion at the Beginning");
+		printf("\n3. Insertion at the End");
+		printf("\n4. Insertion at any position");
+		printf("\n5. Deletion at the Beginning");
+		printf("\n6. Deletion at the End");
+		printf("\n7. Deletion at any position");
+		printf("\n8. To exit");
 		printf("\nEnter Choice: ");
 		scanf("%d", &choice);
 
