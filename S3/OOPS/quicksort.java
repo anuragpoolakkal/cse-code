@@ -1,20 +1,141 @@
 import java.util.*;
+class quicksort {
 
-class quick {
-  public static void main (String[] args) { //main method 
-    if (p>r) {
-      int q = partition(A,p,q-1);
-      quicksort(A, p, q-1);
-      quicksort(A, q+1, r);
+    String names[];
+    int length;
+
+    public static void main(String[] args) {
+         int m;
+         Scanner sc = new Scanner(System.in);
+   	 quicksort obj = new quicksort();
+       
+        System.out.print("Enter of strings: ");
+         m = sc.nextInt();
+         String stringsList[]=new String[m];
+         for(int i=0;i<m;i++)
+         {   System.out.print("\n Enter string "+(i+1)+": " );
+            stringsList[i] = sc.next();        
+         
+         }
+        obj.sort(stringsList);
+               
+        for (String i : stringsList) {
+       
+            System.out.print(i);
+            System.out.print("\n");
+        }
+          }
+
+    void sort(String array[]) {
+        if (array == null || array.length == 0) {
+            return;
+        }
+        this.names = array;
+        this.length = array.length;
+        quickSort(0, length - 1);
     }
-  }
-  
-  public static int partition (String A[], int p, int r) { //partition
-    String x = A[r];
-    int i = p-1;
-    
-    for (int j=p; j<=r; j++) {
-      if (A[j].compareToIgnoreCase(x) <= 0)
+
+    void quickSort(int lowerIndex, int higherIndex) {
+        int i = lowerIndex;
+        int j = higherIndex;
+        String pivot = this.names[lowerIndex + (higherIndex - lowerIndex) / 2];
+
+        while (i <= j) {
+            while (this.names[i].compareToIgnoreCase(pivot) < 0) {
+                i++;
+            }
+
+            while (this.names[j].compareToIgnoreCase(pivot) > 0) {
+                j--;
+                  }
+
+            if (i <= j) {
+                exchangeNames(i, j);
+                i++;
+                j--;
+            }
+        }
+        if (lowerIndex < j) {
+            quickSort(lowerIndex, j);
+        }
+        if (i < higherIndex) {
+            quickSort(i, higherIndex);
+        }
     }
-  }
+
+    void exchangeNames(int i, int j) {
+        String temp = this.names[i];
+        this.names[i] = this.names[j];
+        this.names[j] = temp;
+        }
+}import java.util.*;
+class quicksort {
+
+    String names[];
+    int length;
+
+    public static void main(String[] args) {
+         int m;
+         Scanner sc = new Scanner(System.in);
+   	 quicksort obj = new quicksort();
+       
+        System.out.print("Enter of strings: ");
+         m = sc.nextInt();
+         String stringsList[]=new String[m];
+         for(int i=0;i<m;i++)
+         {   System.out.print("\n Enter string "+(i+1)+": " );
+            stringsList[i] = sc.next();        
+         
+         }
+        obj.sort(stringsList);
+               
+        for (String i : stringsList) {
+       
+            System.out.print(i);
+            System.out.print("\n");
+        }
+          }
+
+    void sort(String array[]) {
+        if (array == null || array.length == 0) {
+            return;
+        }
+        this.names = array;
+        this.length = array.length;
+        quickSort(0, length - 1);
+    }
+
+    void quickSort(int lowerIndex, int higherIndex) {
+        int i = lowerIndex;
+        int j = higherIndex;
+        String pivot = this.names[lowerIndex + (higherIndex - lowerIndex) / 2];
+
+        while (i <= j) {
+            while (this.names[i].compareToIgnoreCase(pivot) < 0) {
+                i++;
+            }
+
+            while (this.names[j].compareToIgnoreCase(pivot) > 0) {
+                j--;
+                  }
+
+            if (i <= j) {
+                exchangeNames(i, j);
+                i++;
+                j--;
+            }
+        }
+        if (lowerIndex < j) {
+            quickSort(lowerIndex, j);
+        }
+        if (i < higherIndex) {
+            quickSort(i, higherIndex);
+        }
+    }
+
+    void exchangeNames(int i, int j) {
+        String temp = this.names[i];
+        this.names[i] = this.names[j];
+        this.names[j] = temp;
+        }
 }
