@@ -20,7 +20,7 @@ class binarysearch {
 			
 public static void main (String[] args) {
 	Scanner sc = new Scanner(System.in);
-	BinarySearch ob = new BinarySearch();
+	binarysearch ob = new binarysearch();
 	
 	System.out.println("Enter number of elements: ");
 	int n = sc.nextInt();
@@ -42,4 +42,3 @@ public static void main (String[] args) {
                                + result);
     }
 }
-				
