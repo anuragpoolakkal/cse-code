@@ -1,69 +1,75 @@
 import java.util.*;
 
-public class node {
+class node {
 	int data;
 	node next;
-	node prev;
+	node previous;
 }
 
-class doublylinkedlist {
-	public static void main(String[] args) {
-		int arr[], index =0, i, n;
+class doublylinkedlist{
+	public static void main(String[] args){
+		int arr[], index = 0, i, n;
 		arr = new int[10];
-		Scannner sc = new scanner(System.in);
+		
+		Scanner sc = new Scanner(System.in);
+		
 		node current_node = null;
-		node prev_node = null;
-		node nxt_node = null;
-		node start_node = null;
+		node previous_node = null;
+		node next_node = null;
 		node end_node = null;
-		System.out.println("Creating linked list \n");
-		System.out.println("Enter number of nodes \n");
-		n = nextInt();
-		for(i =0; i<n; i++) {
-			System.out.println("Enter data");
-			arr[i] = sc.next();
+		node start_node = null;
+		
+		System.out.println("Creating doubly linked list\n\nEnter the number of elements for the linked list: ");
+		n = sc.nextInt();
+		
+		System.out.println("Enter elements: ");
+		
+		for(i = 0; i < n; i++){
+			arr[i] = sc.nextInt();
 		}
+		
 		while(index < n){
-			if(index> 0) {
-				prev_node.next = current_node;
-			} else {
+			current_node = new node();
+			if(index > 0){
+				previous_node.next = current_node;
+			}
+			else{
 				start_node = current_node;
 			}
 			current_node.data = arr[index];
 			current_node.next = null;
-			current_node.prev = prev_node;
+			current_node.previous = previous_node;
 			index++;
-			prev_node = current_node;
+			previous_node = current_node;
 		}
 		
-		System.out.println("Deleting node");
-		System.out.print("Enter key");
+		System.out.println("\nEnter key to delete: ");
 		int key = sc.nextInt();
 		current_node = start_node;
-		if(start_node.data == key) {
-			start_node = start_node.next;
-		} else {
-
-			if (current_node != null) {
-				prev_node = current_node.prev;
-				nxt_node = current_node.next;
-				prev_node = next_node;
-				next_node.prev = previous_node;
-				System.out.println("Node deleted");
-				break;
-			}
 		
-		else { 
-	current_node = current_node.next;
-	}
-
-	}
-
-	System.out.println("Displaying linked list");
-	current_node = start_node;
-	while (current_node != null) {
-		System.out.println(current_node.data);
-		current_node = current_node.next;
+		if(start_node.data == key){
+			start_node = start_node.next;
+		}
+		else{
+			while(current_node != null){
+				if(current_node.data == key){
+					previous_node = current_node.previous;
+					next_node = current_node.next;
+					previous_node.next = next_node;
+					next_node.previous = previous_node;
+					System.out.println("Node deleted");
+					break;
+				}
+				else{
+					current_node = current_node.next;
+				}
+			}
+			System.out.println("Displaying linked lists: \n");
+			current_node = start_node;
+			while(current_node != null){
+				System.out.println(current_node.data);
+				current_node = current_node.next;
+			}
 		}
 	}
 }
