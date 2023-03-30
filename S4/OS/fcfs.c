@@ -70,7 +70,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         printf("Enter the arrival time and burst time for process %d: ", i+1);
         scanf("%d %d", &procs[i].arrival_time, &procs[i].burst_time);
-        procs[i].pid = i+1;Update UUpdate fcfs.cpdate fcfs.cfcfs.c
+        procs[i].pid = i+1;
         procs[i].waiting_time = 0;
         procs[i].turnaround_time = 0;
     }
