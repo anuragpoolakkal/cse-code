@@ -23,7 +23,7 @@ class Second extends Thread{
 		msg=str;
 		start();
     }
-
+1
 
  	public void run(){
 		fobj.display(msg);
@@ -31,7 +31,7 @@ class Second extends Thread{
 }
 
 
-public class threadsynchronization
+public class threadsync
 {
 	public static void main(String[] args)
 	{
