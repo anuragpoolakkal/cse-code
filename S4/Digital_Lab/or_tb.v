@@ -1,4 +1,4 @@
-`include "pgm2.v"
+`include "or.v"
 module pgm2_tb();
 reg A, B;
 wire Y;

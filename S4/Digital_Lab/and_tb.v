@@ -1,4 +1,4 @@
-`include "pgm1.v"
+`include "add.v"
 module pgm1_tb();
 reg A, B;
 wire Y;

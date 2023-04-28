@@ -1,4 +1,4 @@
-`include "pgm3.v"
+`include "not.v"
 module pgm3_tb();
 reg A;
 wire Y;
