@@ -1,5 +1,5 @@
 `include "or.v"
-module pgm2_tb();
+module or_tb();
 reg A, B;
 wire Y;
 or_gate ag(Y,A,B);

@@ -1,5 +1,5 @@
 `include "not.v"
-module pgm3_tb();
+module not_tb();
 reg A;
 wire Y;
 not_gate ag(Y, A);

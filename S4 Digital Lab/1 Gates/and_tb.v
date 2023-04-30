@@ -1,5 +1,6 @@
 `include "add.v"
-module pgm1_tb();
+
+module add_tb();
 reg A, B;
 wire Y;
 and_gate ag(Y,A,B);
