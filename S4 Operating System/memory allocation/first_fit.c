@@ -1,28 +1,27 @@
-#include <stdio.h>
+#include<stdio.h>
 
 void main()
 {
-    int bsize[10], psize[10], bno, pno, flags[10], allocation[10], i, j;
-
-    for (i = 0; i < 10; i++)
-    {
-        flags[i] = 0;
-        allocation[i] = -1;
-    }
+    int bno, pno, flags[10], i, j;
 
     printf("Enter number of blocks: ");
     scanf("%d", &bno);
 
+    printf("Enter number of processes: ");
+    scanf("%d", &pno);
+
+    int bsize[bno], psize[pno], allocation[pno];
+    
     printf("Enter the size of each block: ");
     for (i = 0; i < bno; i++)
         scanf("%d", &bsize[i]);
 
-    printf("Enter number of processes: ");
-    scanf("%d", &pno);
-
     printf("Enter the size of each process: ");
-    for (i = 0; i < pno; i++)
+    for (i = 0; i < pno; i++) {
         scanf("%d", &psize[i]);
+        flags[i] = 0;
+        allocation[i] = -1;
+    }
 
     for (i = 0; i < pno; i++)
     {
