@@ -25,7 +25,8 @@ void consumer() {
 
 int main() {
 	int n, i;
-	printf("1. Producer\n2. Consumer\n3. Exit\n");
+	while(n != 3){
+	printf("\n1. Producer\n2. Consumer\n3. Exit\n");
 	
 	
 		printf("Enter your choice: ");
@@ -40,6 +41,6 @@ int main() {
 			case 3: break;
 			default: printf("Enter valid input!"); break;
 		}
-	
+	}
 	
 }
