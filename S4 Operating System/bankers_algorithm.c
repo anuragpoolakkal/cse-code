@@ -34,7 +34,7 @@ int main()
 
  }
 
-printf("Enter the Available Matrix");
+printf("Enter the Available Resources:");
 
  for(i=0;i<m;i++)
 
