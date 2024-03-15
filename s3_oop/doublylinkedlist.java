@@ -71,5 +71,7 @@ class doublylinkedlist{
 				current_node = current_node.next;
 			}
 		}
+		sc.close();
 	}
+	
 }

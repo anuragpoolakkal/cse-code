@@ -14,9 +14,9 @@ class binarysearch {
 			} else {
 				return binarySearch(arr, mid + 1, r, x);
 			}
-			}
-			return -1;
-			}
+		}
+		return -1;
+	}
 			
 public static void main (String[] args) {
 	Scanner sc = new Scanner(System.in);
@@ -35,7 +35,7 @@ public static void main (String[] args) {
 	int x = sc.nextInt();
 	
         int result = ob.binarySearch(arr, 0, n - 1, x);
-        if (result == -1)
+        if z(result == -1)
             System.out.println("Element not present");
         else
             System.out.println("Element found at index "
