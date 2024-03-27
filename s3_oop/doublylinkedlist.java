@@ -57,7 +57,7 @@ class doublylinkedlist{
 					next_node = current_node.next;
 					previous_node.next = next_node;
 					next_node.previous = previous_node;
-					System.out.println("Node deleted");
+					System.out.println("Node deleted");	
 					break;
 				}
 				else{

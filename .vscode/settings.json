@@ -3,6 +3,7 @@
 		"*.js": "javascriptreact",
 		"*.css": "tailwindcss",
 		"stdlib.h": "c",
-		"types.h": "c"
+		"stdio.h": "c",
+		"graphics.h": "c"
 	}
 }
