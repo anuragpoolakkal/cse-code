@@ -1,4 +1,5 @@
-import tkinter as tk
+import tkinter
+from tkinter import ttk
  
 def add():
     num1 = float(num1_entry.get())
@@ -25,19 +26,23 @@ def div():
     result_label.config(text=result)
  
 # create the main window
-root = tk.Tk()
+root = tkinter.Tk()
 root.title("Add Two Numbers")
 
+my_frame=ttk.Frame(root,padding=100,width=800,height=250)
+my_frame.grid()
+my_frame.pack()
+
 # create the widgets
-num1_label = tk.Label(root, text="Number 1:")
-num1_entry = tk.Entry(root)
-num2_label = tk.Label(root, text="Number 2:")
-num2_entry = tk.Entry(root)
-add_button = tk.Button(root, text="Add", command=add)
-sub_button = tk.Button(root, text="Subtract", command=sub)
-mul_button = tk.Button(root, text="Multiply", command=mul)
-div_button = tk.Button(root, text="Divide", command=div)
-result_label = tk.Label(root, text="Result: ")
+num1_label = ttk.Label(my_frame, text="Number 1:", padding=10)
+num1_entry = ttk.Entry(my_frame)
+num2_label = ttk.Label(my_frame, text="Number 2:", padding=10)
+num2_entry = ttk.Entry(my_frame)
+add_button = ttk.Button(my_frame, text="Add", command=add, padding=10)
+sub_button = ttk.Button(my_frame, text="Subtract", command=sub, padding=10)
+mul_button = ttk.Button(my_frame, text="Multiply", command=mul, padding=10)
+div_button = ttk.Button(my_frame, text="Divide", command=div, padding=10)
+result_label = ttk.Label(my_frame, text="Result: ", padding=10)
 
 
 # layout the widgets
