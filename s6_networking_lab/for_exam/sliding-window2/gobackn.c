@@ -14,6 +14,7 @@ int main() {
     int errors[TOTAL_FRAMES+1];
     int er;
     int no_error;
+    
     printf("Enter the number of errors");
     scanf("%d",&no_error);
     for(int i=0;i<TOTAL_FRAMES;i++){
