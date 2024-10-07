@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cube of a number</title>
+		<style>
+			#cube {
+				font-weight: 400;
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="cube"></p>
+
+		<script>
+			const number = prompt("Enter a number: ");
+			const cube = Math.pow(number, 3);
+			document.getElementById("cube").innerHTML = `The cube of ${number} is <strong>${cube}</strong>`;
+		</script>
+	</body>
+</html>

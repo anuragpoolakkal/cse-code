@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Registration Form</title>
+	</head>
+	<body>
+		<form>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required /><br /><br />
+
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address" required /><br /><br />
+
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required /><br /><br />
+
+			<label for="contact">Contact Number:</label>
+			<input type="tel" id="contact" name="contact" required /><br /><br />
+
+			<label for="dob">Date of Birth:</label><br />
+			<input type="date" id="dob" name="dob" required /><br /><br />
+
+			<label>Sex:</label><br />
+			<input type="radio" id="male" name="sex" value="male" required />
+			<label for="male">Male</label><br />
+			<input type="radio" id="female" name="sex" value="female" />
+			<label for="female">Female</label><br />
+			<input type="radio" id="other" name="sex" value="other" />
+			<label for="other">Other</label><br /><br />
+
+			<label>Area of Interest:</label><br />
+			<input type="checkbox" id="software" name="interest" value="software" />
+			<label for="software">Software Development</label><br />
+			<input type="checkbox" id="networking" name="interest" value="networking" />
+			<label for="networking">Networking</label><br />
+			<input type="checkbox" id="data" name="interest" value="data" />
+			<label for="data">Data Analysis</label><br />
+			<input type="checkbox" id="design" name="interest" value="design" />
+			<label for="design">Graphic Design</label><br /><br />
+
+			<label for="experience">Experience:</label><br />
+			<select id="experience" name="experience" required>
+				<option value="" disabled selected>Select your experience</option>
+				<option value="fresher">Fresher</option>
+				<option value="1-2">1-2 years</option>
+				<option value="3-5">3-5 years</option>
+				<option value="5+">More than 5 years</option></select
+			><br /><br />
+
+			<button type="submit">Submit</button>
+			<button type="reset">Reset</button>
+		</form>
+	</body>
+</html>

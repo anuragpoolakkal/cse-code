@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form Validation</title>
+	</head>
+	<body>
+		<form name="loginForm" onsubmit="return validateForm()">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" /><br /><br />
+
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" /><br /><br />
+
+			<input type="submit" value="Submit" />
+		</form>
+
+		<script>
+			function validateForm() {
+				const username = document.forms["loginForm"]["username"].value;
+				const password = document.forms["loginForm"]["password"].value;
+
+				if (username == "") {
+					alert("Username must not be blank");
+					return false;
+				}
+
+				if (password.length < 6) {
+					alert("Password must be at least 6 characters long");
+					return false;
+				}
+
+				return true;
+			}
+		</script>
+	</body>
+</html>
