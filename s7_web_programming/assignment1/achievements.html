@@ -4,12 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="styles.css" />
+		<link rel="icon" href="favicon.png" type="image/png" />
 		<title>Achievements - Portfolio</title>
 	</head>
 	<body>
 		<div id="nav">
-			<ul>
-				<li><a href="index.html">Home</a></li>
+			<div class="hamburger" onclick="toggleMenu()">☰</div>
+			<ul id="nav-links">
+				<li><a href="/">Home</a></li>
 				<li><a href="experience.html">Experience</a></li>
 				<li><a href="education.html">Education</a></li>
 				<li><a href="projects.html">Projects</a></li>
@@ -34,5 +36,6 @@
 				</p>
 			</footer>
 		</div>
+		<script src="script.js"></script>
 	</body>
 </html>
