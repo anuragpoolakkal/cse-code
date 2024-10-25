@@ -1,15 +1,22 @@
 %{
-    #include "y.tab.h"
+#include<stdio.h>
+#include "y.tab.h"
+extern int yylval;
 %}
 
+
+
 %%
+[0-9]+ {
+    yylval=atoi(yytext);
+    return NUMBER;
+}
 
-[a-zA-Z_][a-zA-Z_0-9]*   { return ID; }
-[0-9]+(\.[0-9]+)?        { return NUM; }
-[+\-*/]                  { return OP; }
-.                        { return yytext[0]; }
-\n                       { /* Ignore newlines */ }
+[\t] ;
 
+[\n] return 0;
+
+. return yytext[0];
 %%
 
 int yywrap() {
