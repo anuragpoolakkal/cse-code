@@ -25,7 +25,7 @@ if.*\{ {
 %%
 
 int main(){
-    FILE *fp = fopen("program.txt", "r");
+    FILE *fp = fopen("input.c", "r");
     yyin = fp;
 
     yylex();
