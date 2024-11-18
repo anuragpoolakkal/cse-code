@@ -2,8 +2,8 @@
 session_start();
 $message = "";
 
-$host = 'database-1.clmcs66qmddh.ap-south-1.rds.amazonaws.com';
-$port = 3306;
+$host = 'database';
+$port = 3000;
 $db = 'bloodbank';
 $user = 'admin';
 $pass = 'password';
